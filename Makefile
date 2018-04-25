@@ -19,7 +19,6 @@ TOP		:= $(shell pwd)
 NODE_MODULES	:= $(TOP)/node_modules
 NODE_BIN	:= $(NODE_MODULES)/.bin
 ESLINT		= $(NODE_BIN)/eslint
-JSCS		= $(NODE_BIN)/jscs
 MOCHA		= $(NODE_BIN)/mocha
 IMOCHA		= $(NODE_BIN)/_mocha
 ISTANBUL	= $(NODE_BIN)/istanbul
@@ -41,15 +40,11 @@ CLEAN_FILES	+= node_modules $(SHRINKWRAP)
 # Repo-specific targets
 #
 .PHONY: all
-all: node_modules lint style cover
+all: node_modules lint cover
 
 .PHONY: lint
 lint: node_modules $(ESLINT) $(JS_FILES)
 	$(ESLINT) $(JS_FILES)
-
-.PHONY: style
-style: node_modules $(JSCS) $(JS_FILES)
-	$(JSCS) $(JS_FILES)
 
 .PHONY: cover
 cover: node_modules $(ISTANBUL) $(IMOCHA)
@@ -75,4 +70,3 @@ distclean:
 # Debug -- print out a a variable via `make print-FOO`
 #
 print-%  : ; @echo $* = $($*)
-
