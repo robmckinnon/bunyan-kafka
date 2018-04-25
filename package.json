@@ -30,11 +30,11 @@
     "kafka-node": "^2.6.0"
   },
   "devDependencies": {
-    "chai": "^3.0.0",
-    "eslint": "0.24.0",
-    "istanbul": "^0.3.17",
-    "jscs": "1.13.1",
-    "mocha": "^2.2.5",
-    "uuid": "^2.0.1"
+    "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "istanbul": "^0.4.5",
+    "jscs": "^3.0.7",
+    "mocha": "^5.1.1",
+    "uuid": "^3.2.1"
   }
 }
